@@ -349,7 +349,7 @@
 										<div id="slipcase-price-tuner-project-wrapper"> 
 											<section id="SlipcasePriceTuner">
 												<article>
-													<a class="image"><img src="images/slipcase-price-tuner.png" alt="" /></a>
+													<a class="image"><img src="images/slipcase-price-tuner.png" alt="Slipcase Price Tuner banner" /></a>
 													<div class="inner">
 														<h5>Stakeholder Project:</h5>
 														<h4>Product Price Tuning</h4>
@@ -364,17 +364,18 @@
 														</p>
 														<p>
 															<h5>Context:</h5>
-															A shipper and manufacturer of boxes for packing fine art was unhappy with the simple linear function they were using to set prices.
-															They were multiplying custom box dimensions by a coefficient to get a retail price, but this model did not do well for extreme sizes -  
-															the retail prices felt too high for small boxes and too low for large boxes. 
+															A manufacturer of custom art-packing boxes was unhappy with their method of calculating prices.
+															They were multiplying the box dimensions by a coefficient to produce a retail price, but this model did not scale well for extreme sizes. 
+															The retail prices felt too high for small boxes and too low for large boxes. 
 														</p>
 														<p>
 															<h5>Goal:</h5>
-															I was asked to produce a single, continuous price function that performed better at the extreme ends of the product range.
+															The manufacturer wanted to avoid explicitly adding a surcharge for large boxes.
+															I was asked to produce a single price function that performed better at the extreme ends of the product range. 
 														</p>
 														<p>
 															<h5>Key Challenge:</h5>
-															Modifying the price function in a continuous manner and avoiding tacking on explicit surcharges for larger boxes.
+															Representing changes to the price function in an easy-to-grasp visualization.
 														</p>							
 														<p>
 															<h5>What I Built:</h5>
@@ -394,13 +395,13 @@
 															</ul>
 														</p>
 														<p>
-															<span><img src="images/slipcase_pricer_tuner.png" alt="Database Schema Diagram" width="100%"/></span>
+															<span><img src="images/slipcase_pricer_tuner_grid.png" alt="Price tuner grids" width="100%"/></span>
 														</p>
 														<p>
-															This image shows the pricing grid after adjustments to 3 of the 4 quadrants. 
-															(Box length and height in inches are shown along the axes.) 
+															The image shows the pricing grid after adjustments to two corner quadrants.														
 															The left grid shows final retail price ($), and the right grid shows changes in price from the underlying price model. 
-															Note the large field of 1's, indicating only a minor rounding increase of $1 to the underlying prices.
+															Note the large field of 0's and 1's in the right grid, indicating only a minor impact to the underlying prices.
+															(Box length and height in inches are shown along the axes.) 
 														</p>
 														<p>
 															<h5>Deliverables:</h5>
@@ -411,11 +412,7 @@
 														<p>
 															<h5>Impact:</h5>
 															<ul>
-																<li></li>
-																<br>
-																<li></li>
-																<br>
-																<li></li>														
+																<li></li>													
 															</ul>
 														<p>
 															<span><img src="images/slipcase_price_tuner_plot.png" alt="Database Schema Diagram" width="100%"/></span>
