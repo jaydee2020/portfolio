@@ -352,7 +352,7 @@
 													<a class="image"><img src="images/slipcase-price-tuner.png" alt="Slipcase Price Tuner banner" /></a>
 													<div class="inner">
 														<h5>Stakeholder Project:</h5>
-														<h4>Product Price Tuning</h4>
+														<h4>Slipcase Price Tuning</h4>
 														<p><lowlight>Python</lowlight> <lowlight>Pandas</lowlight> </p>
 														<p>I created a visualization tool to help a box manufacturer adjust their pricing.</p>
 														<a href="javascript:void(0);" onclick="toggleDetails('slipcase-price-tuner-details', this, 'slipcase-price-tuner-project-wrapper');" id="slipcase-price-tuner-button" class="button default">view project details</a>
@@ -364,44 +364,46 @@
 														</p>
 														<p>
 															<h5>Context:</h5>
-															A manufacturer of custom art-packing boxes was unhappy with their method of calculating prices.
-															They were multiplying the box dimensions by a coefficient to produce a retail price, but this model did not scale well for extreme sizes. 
-															The retail prices felt too high for small boxes and too low for large boxes. 
+															A manufacturer of custom art-packing boxes (slipcases) was using a simple linear function to calculate retail prices, but this did not scale well for extreme sizes. 
+															The prices felt too high for small boxes and too low for large boxes. 
+															The manufacturer wanted to avoid adding a separate surcharge for large boxes.
 														</p>
 														<p>
-															<h5>Goal:</h5>
-															The manufacturer wanted to avoid explicitly adding a surcharge for large boxes.
-															I was asked to produce a single price function that performed better at the extreme ends of the product range. 
+															<h5>Goal:</h5>											
+															I was asked to produce a single, continuous price function that performed better at the extreme ends of the product range. 
 														</p>
 														<p>
 															<h5>Key Challenge:</h5>
-															Representing changes to the price function in an easy-to-grasp visualization.
+															Creating an easy-to-grasp visualization that shows changes to the price function.
 														</p>							
 														<p>
 															<h5>What I Built:</h5>
-															I created a pricing-grid visualization based on box size, and I wrote exponential expressions that can selectively raise or lower prices. 
-															The script is run in a Python notebook.
-															<br><br>
-															<ul>
-																<li>
-																	The underlying price model remains the same, but multiple coefficients can be adjusted to independently target quadrants in the grid.
-																	The resulting changes in prices for the entire product line can be seen at a glance.
-																</li>
-																<br>
-																<li>															
-																	The manufacturer can experiment with different combinations until the prices of small and large boxes feel right without affecting the midsize box pricing. 
-																	The notebook outputs the corresponding 'tuned' price function, which the manufacturer can copy and paste into the price calculator of their choice.
-																</li>
-															</ul>
+															I wrote a new, adjustable price function with exponential expressions that target specific box sizes. 															
+															I also created a grid visualization that shows updated prices when adjustments are made to the function.
 														</p>
 														<p>
 															<span><img src="images/slipcase_pricer_tuner_grid.png" alt="Price tuner grids" width="100%"/></span>
 														</p>
-														<p>
-															The image shows the pricing grid after adjustments to two corner quadrants.														
-															The left grid shows final retail price ($), and the right grid shows changes in price from the underlying price model. 
-															Note the large field of 0's and 1's in the right grid, indicating only a minor impact to the underlying prices.
-															(Box length and height in inches are shown along the axes.) 
+																												<p>
+															This is an image of the visualization after price adjustments for small and large boxes (box length and height in inches are shown along the axes.).														
+															The left grid contains final retail price ($), and the right grid contains changes in price from the underlying price model. 
+															Note the large field of 0's and 1's in the middle of the right grid, indicating only a minor impact to the underlying prices.
+															 
+														</p>
+														<p>	
+															<ul>														
+																<li>
+																	Multiple coefficients can be adjusted to independently target quadrants in the price grid.
+																	Prices can be throttled or increased, but the base price model, for example $.55 per linear inch, remains for non-adjusted box sizes.
+																	
+																</li>
+																<br>
+																<li>															
+																	The visualization script is run in a Python notebook.
+																	The manufacturer can experiment with different combinations until the prices of small and large boxes feel right without affecting the midsize box pricing. 
+																	The notebook outputs the corresponding 'tuned' price function, which the manufacturer can copy and paste into the business software of their choice.
+																</li>
+															</ul>
 														</p>
 														<p>
 															<h5>Deliverables:</h5>
@@ -412,7 +414,9 @@
 														<p>
 															<h5>Impact:</h5>
 															<ul>
-																<li></li>													
+																<li>The manufacturer was able to easily adjust their prices. Small custom boxes are more appealing to price-conscious customers, 
+																	and large boxes provide a proper profit margin for the manufacturer.
+																</li>													
 															</ul>
 														<p>
 															<span><img src="images/slipcase_price_tuner_plot.png" alt="Database Schema Diagram" width="100%"/></span>
