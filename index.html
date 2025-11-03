@@ -26,8 +26,7 @@
 						<li><a href="#StakeholderProjects">STAKEHOLDER PROJECTS</a></li>
 						<li><a href="#IndependentProjects">INDEPENDENT PROJECTS</a><li>
 						<li><a href="#Skills">SKILLS</a></li>
-						<li><a href="#Education">EDUCATION</a></li>
-						<li><a href="#Contact">CONTACT</li>
+						<li><a href="#Education">EDUCATION</a></li>				
 					</ul>
 				</nav>
 				<footer>
@@ -300,133 +299,9 @@
 														<h5>Stakeholder Project:</h5>
 														<h4>Tree Coordinate Validation</h4>
 														<p><lowlight>Python</lowlight> <lowlight>Pandas</lowlight> <lowlight>QGIS</lowlight> <lowlight>Data&nbsp;Transformation</lowlight></p>
-														<p>I reconciled two sets of geographic data to pinpoint tree locations in a public garden.</p>
-														<a href="javascript:void(0);" onclick="toggleDetails('tree-location-details', this, 'tree-location-project-wrapper');" id="tree-location-button" class="button default">view project details</a>
-													</div>
-													<div id="tree-location-details" style="display: none; padding-top: 1em;">
-														<p>
-															<h5>My Role:</h5>
-															Volunteer Data Specialist for the Wave Hill Horticulture Department
-														</p>
-														<p>
-															<h5>Context:</h5>
-															Wave Hill is a non-profit public garden with a Horticultural Inventory database for internal use. Scientific information for each database record, such as the native range of a plant, was entered individually after manual internet lookups.
-														</p>
-														<p>
-															<h5>Goal:</h5>
-															I was asked to eliminate the tedious internet lookups by integrating scientific plant information directly in the existing Horticultural Inventory database.
-														</p>
-														<p>
-															<h5>Data Description:</h5>
-															<div class="table-wrapper">
-																<table>
-																	<thead>
-																		<tr>
-																			<th>Source Dataset</th>
-																			<th>Data Format</th>
-																			<th>Size (rows)</th>
-																		</tr>
-																	</thead>
-																	<tbody>
-																		<tr>
-																			<td>Plant records extracted from<br>the Horticultural Inventory database (DB)</td>
-																			<td>CSV file</td>
-																			<td>~1,300</td>
-																		</tr>
-																		<tr>
-																			<td>Scientific plant information from<br>the U.S. Dept. of Agriculture (USDA)</td>
-																			<td>CSV file</td>
-																			<td>~93,000</td>
-																		</tr>
-																		<tr>
-																			<td>Scientific plant information from<br>the World Checklist of Vascular Plants (WCVP)</td>
-																			<td>CSV file</td>
-																			<td>~1.4 million</td>
-																		</tr>
-																	</tbody>
-																</table>
-															</div>
-														</p>
-														<p>
-															<h5>Key Challenge:</h5>
-															Each of the data sources handles the scientific plant names differently. Cleaning and aligning the scientific names was crucial to joining the 3 datasets.
-														</p>
-															<div class="table-wrapper">
-																<table class="sci_name">
-																	<thead>
-																		<!-- Header Row 1 -->
-																			<tr>
-																				<th colspan="4">
-																					Scientific Plant Name
-																				</th>
-																			</tr>
-
-																			<!-- Header Row 2 -->
-																			<tr>
-																				<th colspan="2">
-																					Species Name
-																				</th>
-																				<th colspan="2">
-																					Infraspecies Rank
-																				</th>
-																			</tr>
-
-																			<!-- Header Row 3 -->
-																			<tr>
-																				<th>Genus</th>
-																				<th>Specific Epithet</th>
-																				<th>Infraspecies Designation</th>
-																				<th>Infraspecies Name</th>
-																			</tr>
-																		</thead>
-																	<tbody>
-																		<tr>
-																			<td><i>Phlox</i></td>
-																			<td><i>divaricata</i></td>
-																			<td>subsp.</td>
-																			<td><i>laphamii</i></td>
-																		</tr>
-		
-																	</tbody>
-																</table>
-															</div>												
-														<p>
-															<h5>What I Built:</h5>I used Python code to parse scientific plant names into a standard format and join the source datasets. The joined data was loaded into the Horticultural Inventory datase as a new table.
-														</p>
-														<p>
-															<ol>
-																<li>I wrote a Python module to deconstruct a scientific plant name into taxonomic nomenclature components: genus, specific epithet, hybrid, and infraspecies. My code handles common abbreviation variations, such as subsp. or ssp for subspecies.</li>
-														   		<br>
-																<li>I loaded the DB and USDA datasets into Pandas dataframes, then I parsed their scientific name columns using the parser module from step 1.</li>
-														   		<br>
-																<li>I joined the DB, USDA, and WCVP dataframes using the parsed scientific plant name components as a composite key.</li>
-															</ol>
-														</p>
-														<p>
-															<span><img src="images/ER_diagram_hort_db.png" alt="Database Schema Diagram" width="100%"/></span>
-														</p>
-														<p>
-															<h5>Deliverables:</h5>
-															<ul>
-																<li>A CSV of combined USDA and WCVP scientific information corresponding to the 1310 unique plant names in the Horticultural Inventory database. This CSV was loaded as a new table in the database. The scientific plant name is the foreign key that allows the scientific information to be joined with the inventory table.</li>
-																<br>
-																<li>A Python notebook that connects to the database through an API so users can add new rows of scientific information.</li>
-															</ul>
-														</p>
-														<p>
-															<h5>Impact:</h5>
-															<ul>
-																<li>Scientific information matches for 1256 of 1310 plant records in the Horticultural Inventory. 
-																	This equates to 7 hours of time saved performing manual lookups of the same information, assuming 20 seconds per lookup.</li>
-																<br>
-																<li>Data validation - unmatched records indiciate followup for potential spelling errors or unaccepted scientific names in the original Inventory table.</li>
-																<br>
-																<li>Rapid loading of future single-row additions to the database via the API-connected notebook, which also avoids the copy-and-paste errors of manual data entry.</li>
-															</ul>
-														</p>
-														<a href="https://github.com/jaydee2020/horticultural-db-integration/tree/main" target="_blank" rel="noopener noreferrer" class="button_git small">view code on GitHub</a>	
-														<a href="javascript:void(0);" onclick="toggleDetails('tree-location-details', document.getElementById('tree-location-button'), 'tree-location-project-wrapper');" class="button small">hide project details</a>			
-													</div>
+														<p>I reconciled two sets of geographic data to pinpoint tree locations in a public garden.<br>
+															 (Details coming soon.)
+														</p>									
 												</article>
 											</section>
 										</div>																				
@@ -447,74 +322,10 @@
 														<h5>Independent Project:</h5> 
 														<h4>Squirrel Census EDA</h4>
 														<p><lowlight>Python</lowlight> <lowlight>Pandas</lowlight> <lowlight>Numpy</lowlight> <lowlight>SQL</lowlight> <br> <lowlight>Matplotlib</lowlight> <lowlight>Data&nbsp;Visualization</lowlight> <lowlight>Data&nbsp;Transformation</lowlight></p>
-														<p>My exploratory data analysis of squirrel behavior observed in the 2018 Central Park Squirrel Census.</p>
-														<a href="javascript:void(0);" onclick="toggleDetails('squirrel-census-details', this, 'squirrel-census-project-wrapper');" id="squirrel-census-button" class="button default">view project details</a>
-													</div>
-													<div id="squirrel-census-details" style="display: none; padding-top: 1em;">
-														<p>
-															<h5>Context:</h5>
-															Wave Hill is a non-profit public garden with a Horticultural Inventory database for internal use. Scientific information for each database record, such as the native range of a plant, was entered individually after manual internet lookups.
+														<p>My exploratory data analysis of squirrel behavior observed during the 2018 Central Park Squirrel Census.<br>
+														   (Details coming soon.)
 														</p>
-														<p>
-															<h5>Goal:</h5>
-															I was asked to eliminate the tedious internet lookups by integrating scientific plant information directly in the existing Horticultural Inventory database.
-														</p>
-														<p>
-															<h5>Data Description:</h5>
-															<div class="table-wrapper">
-																<table>
-																	<thead>
-																		<tr>
-																			<th>Source Dataset</th>
-																			<th>Data Format</th>
-																			<th>Size (rows)</th>
-																		</tr>
-																	</thead>
-																	<tbody>
-																		<tr>
-																			<td>Plant records extracted from<br>the Horticultural Inventory database (DB)</td>
-																			<td>CSV file</td>
-																			<td>~1,300</td>
-																		</tr>
-																		<tr>
-																			<td>Scientific plant information from<br>the U.S. Dept. of Agriculture (USDA)</td>
-																			<td>CSV file</td>
-																			<td>~93,000</td>
-																		</tr>
-																		<tr>
-																			<td>Scientific plant information from<br>the World Checklist of Vascular Plants (WCVP)</td>
-																			<td>CSV file</td>
-																			<td>~1.4 million</td>
-																		</tr>
-																	</tbody>
-																</table>
-															</div>
-														</p>
-														<p>
-															<h5>Techniques:</h5>I used Python code to parse scientific plant names into a standard format and join the source datasets. The joined data was loaded into the Horticultural Inventory datase as a new table.
-														</p>
-														<p>
-															<ol>
-																<li>I wrote a Python module to deconstruct a scientific plant name into taxonomic nomenclature components: genus, specific epithet, hybrid, and infraspecies. My code handles common abbreviation variations, such as subsp. or ssp for subspecies.</li>
-														   		<br>
-																<li>I loaded the DB and USDA datasets into Pandas dataframes, then I parsed their scientific name columns using the parser module from step 1.</li>
-														   		<br>
-																<li>I joined the DB, USDA, and WCVP dataframes using the parsed scientific plant name components as a composite key.</li>
-															</ol>
-														</p>
-														<p>
-															<span><img src="images/ER_diagram_hort_db.png" alt="Database Schema Diagram" width="100%"/></span>
-														</p>
-														<p>
-															<h5>Key Findings:</h5>
-															<ul>
-																<li>A CSV of combined USDA and WCVP scientific information corresponding to the 1310 unique plant names in the Horticultural Inventory database. This CSV was loaded as a new table in the database. The scientific plant name is the foreign key that allows the scientific information to be joined with the inventory table.</li>
-																<br>
-																<li>A Python notebook that connects to the database through an API so users can add new rows of scientific information.</li>
-															</ul>
-														</p>
-														<a href="https://github.com/jaydee2020/horticultural-db-integration/tree/main" target="_blank" rel="noopener noreferrer" class="button_git small">view code on GitHub</a>	
-														<a href="javascript:void(0);" onclick="toggleDetails('squirrel-census-details', document.getElementById('squirrel-census-button'), 'squirrel-census-project-wrapper');" class="button small">hide project details</a>			
+														<a href="https://github.com/jaydee2020/Squirrel_Census_EDA/blob/main/Squirrel_Census_EDA.ipynb" target="_blank" rel="noopener noreferrer" class="button default">view code on GitHub</a>															
 													</div>
 												</article>
 											</section>
@@ -527,141 +338,11 @@
 														<h5>Independent Project:</h5> 
 														<h4>New York Courts EDA</h4>
 														<p><lowlight>Python</lowlight> <lowlight>Pandas</lowlight> <lowlight>Numpy</lowlight> <lowlight>SQL</lowlight> <br> <lowlight>Matplotlib</lowlight> <lowlight>Data&nbsp;Visualization</lowlight></p>
-														<p>I explored court trends in the five NYC boroughs during the pandemic years.</p>
-														<a href="javascript:void(0);" onclick="toggleDetails('nys-courts-details', this, 'nys-courts-project-wrapper');" id="nys-courts-button" class="button default">view project details</a>
-													</div>
-													<div id="nys-courts-details" style="display: none; padding-top: 1em;">
-														<p>
-															<h5>My Role:</h5>
-															Volunteer Data Specialist for the Wave Hill Horticulture Department
+														<p>I explored court trends in the five NYC boroughs during the pandemic years.<br>
+															(Details coming soon.)
 														</p>
-														<p>
-															<h5>Context:</h5>
-															Wave Hill is a non-profit public garden with a Horticultural Inventory database for internal use. Scientific information for each database record, such as the native range of a plant, was entered individually after manual internet lookups.
-														</p>
-														<p>
-															<h5>Goal:</h5>
-															I was asked to eliminate the tedious internet lookups by integrating scientific plant information directly in the existing Horticultural Inventory database.
-														</p>
-														<p>
-															<h5>Data Description:</h5>
-															<div class="table-wrapper">
-																<table>
-																	<thead>
-																		<tr>
-																			<th>Source Dataset</th>
-																			<th>Data Format</th>
-																			<th>Size (rows)</th>
-																		</tr>
-																	</thead>
-																	<tbody>
-																		<tr>
-																			<td>Plant records extracted from<br>the Horticultural Inventory database (DB)</td>
-																			<td>CSV file</td>
-																			<td>~1,300</td>
-																		</tr>
-																		<tr>
-																			<td>Scientific plant information from<br>the U.S. Dept. of Agriculture (USDA)</td>
-																			<td>CSV file</td>
-																			<td>~93,000</td>
-																		</tr>
-																		<tr>
-																			<td>Scientific plant information from<br>the World Checklist of Vascular Plants (WCVP)</td>
-																			<td>CSV file</td>
-																			<td>~1.4 million</td>
-																		</tr>
-																	</tbody>
-																</table>
-															</div>
-														</p>
-														<p>
-															<h5>Key Challenge:</h5>
-															Each of the data sources handles the scientific plant names differently. Cleaning and aligning the scientific names was crucial to joining the 3 datasets.
-														</p>
-															<div class="table-wrapper">
-																<table class="sci_name">
-																	<thead>
-																		<!-- Header Row 1 -->
-																			<tr>
-																				<th colspan="4">
-																					Scientific Plant Name
-																				</th>
-																			</tr>
-
-																			<!-- Header Row 2 -->
-																			<tr>
-																				<th colspan="2">
-																					Species Name
-																				</th>
-																				<th colspan="2">
-																					Infraspecies Rank
-																				</th>
-																			</tr>
-
-																			<!-- Header Row 3 -->
-																			<tr>
-																				<th>Genus</th>
-																				<th>Specific Epithet</th>
-																				<th>Infraspecies Designation</th>
-																				<th>Infraspecies Name</th>
-																			</tr>
-																		</thead>
-																	<tbody>
-																		<tr>
-																			<td><i>Phlox</i></td>
-																			<td><i>divaricata</i></td>
-																			<td>subsp.</td>
-																			<td><i>laphamii</i></td>
-																		</tr>
-		
-																	</tbody>
-																</table>
-															</div>												
-														<p>
-															<h5>What I Built:</h5>I used Python code to parse scientific plant names into a standard format and join the source datasets. The joined data was loaded into the Horticultural Inventory datase as a new table.
-														</p>
-														<p>
-															<ol>
-																<li>I wrote a Python module to deconstruct a scientific plant name into taxonomic nomenclature components: genus, specific epithet, hybrid, and infraspecies. My code handles common abbreviation variations, such as subsp. or ssp for subspecies.</li>
-														   		<br>
-																<li>I loaded the DB and USDA datasets into Pandas dataframes, then I parsed their scientific name columns using the parser module from step 1.</li>
-														   		<br>
-																<li>I joined the DB, USDA, and WCVP dataframes using the parsed scientific plant name components as a composite key.</li>
-															</ol>
-														</p>
-														<p>
-															<span><img src="images/ER_diagram_hort_db.png" alt="Database Schema Diagram" width="100%"/></span>
-														</p>
-														<p>
-															<h5>Deliverables:</h5>
-															<ul>
-																<li>A CSV of combined USDA and WCVP scientific information corresponding to the 1310 unique plant names in the Horticultural Inventory database. This CSV was loaded as a new table in the database. The scientific plant name is the foreign key that allows the scientific information to be joined with the inventory table.</li>
-																<br>
-																<li>A Python notebook that connects to the database through an API so users can add new rows of scientific information.</li>
-															</ul>
-														</p>
-														<p>
-															<h5>Impact:</h5>
-															<ul>
-																<li>Scientific information matches for 1256 of 1310 plant records in the Horticultural Inventory. 
-																	This equates to 7 hours of time saved performing manual lookups of the same information, assuming 20 seconds per lookup.</li>
-																<br>
-																<li>Data validation - unmatched records indiciate followup for potential spelling errors or unaccepted scientific names in the original Inventory table.</li>
-																<br>
-																<li>Rapid loading of future single-row additions to the database via the API-connected notebook, which also avoids the copy-and-paste errors of manual data entry.</li>
-															</ul>
-														</p>
-														<a href="https://github.com/jaydee2020/horticultural-db-integration/tree/main" target="_blank" rel="noopener noreferrer" class="button_git small">view code on GitHub</a>	
-														<a href="javascript:void(0);" onclick="toggleDetails('nys-courts-details', document.getElementById('nys-courts-button'), 'nys-courts-project-wrapper');" class="button small">hide project details</a>			
-													</div>
-													<div id="nys-courts-details" style="display: none; padding-top: 3em;">
-														<p><span><img src="images/pic02.jpg" alt="Database Schema Diagram" width="100%"/></span></p>
-														<p>More and more text about addition things and stufff wlsdfkjdfjkh</p>
-														<p><span class="image left"><img src="images/pic02.jpg" alt="Database Schema Diagram" /></span></p>
-														<p>Further work included developing automated tests for data integrity and implementing a scheduled job to refresh the data daily. The success of this project was its ability to provide a single source of truth for all business intelligence reporting.</p>
-														<p><span class="image right"><img src="images/pic02.jpg" alt="Database Schema Diagram" /></span>And some more texte here about other things.</p>
-														<p>More and more text about addition things and stufff wlsdfkjdfjkh</p>
-													</div>
+														<a href="https://github.com/jaydee2020/OCA-STAT_EDA/blob/main/OCA_STAT_SQL_.ipynb" target="_blank" rel="noopener noreferrer" class="button default">view code on GitHub</a>
+													</div>													
 												</article>
 											</section>
 										</div>
@@ -695,16 +376,7 @@
 																				<strong>LaGuardia Community College</strong><br>AS, Computer Science</li>
 									</ul>
 								</div>
-							</section>
-						<!-- Contact -->
-							<section id="Contact">
-								<div class="container">
-									<h3>Contact Me</h3>
-									<p>
-										
-									</p>
-								</div>
-							</section>
+							</section>						
 					</div>
 
 						<!-- Footer -->
