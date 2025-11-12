@@ -300,9 +300,9 @@
 														<h5>Stakeholder Project:</h5>
 														<h4>Tree Coordinate Validation</h4>
 														<p><lowlight>Python</lowlight> <lowlight>Pandas</lowlight> <lowlight>QGIS</lowlight> <lowlight>Data&nbsp;Transformation</lowlight></p>
-														<p>I reconciled two sets of geographic data to pinpoint tree locations in a public garden.<br>
-															 (Details coming soon.)
-														</p>									
+														<p>I reconciled two sets of geographic data to pinpoint tree locations in a public garden.</p>
+														<p>(Details coming soon.)</p>
+													</div>												
 												</article>
 											</section>
 										</div>																				
@@ -322,11 +322,77 @@
 													<div class="inner">
 														<h5>Independent Project:</h5> 
 														<h4>Squirrel Census EDA</h4>
-														<p><lowlight>Python</lowlight> <lowlight>Pandas</lowlight> <lowlight>Numpy</lowlight> <lowlight>SQL</lowlight> <br> <lowlight>Matplotlib</lowlight> <lowlight>Data&nbsp;Visualization</lowlight> <lowlight>Data&nbsp;Transformation</lowlight></p>
-														<p>My exploratory data analysis of squirrel behavior observed during the 2018 Central Park Squirrel Census.<br>
-														   (Details coming soon.)
+														<p><lowlight>Python</lowlight> <lowlight>Pandas</lowlight> <lowlight>Numpy</lowlight> <br> <lowlight>Matplotlib</lowlight> <lowlight>Data&nbsp;Visualization</lowlight> <lowlight>Data&nbsp;Transformation</lowlight></p>
+														<p>My exploratory data analysis of squirrel behavior observed in the 2018 Central Park Squirrel Census.</p>
+														<a href="javascript:void(0);" onclick="toggleDetails('squirrel-census-details', this, 'squirrel-census-project-wrapper');" id="squirrel-census-button" class="button default">view project details</a>
+													</div>
+													<div id="squirrel-census-details" style="display: none; padding-top: 1em;">
+														<p>
+															<h5>Context:</h5>
+															The 2018 Central Park Squirrel Census project was conducted by volunteers and organizations throughout the park's 843 acres and various use areas. 
+															Squirrel locations, characteristics, and behaviors were recorded over several days.
 														</p>
-														<a href="https://github.com/jaydee2020/Squirrel_Census_EDA/blob/main/Squirrel_Census_EDA.ipynb" target="_blank" rel="noopener noreferrer" class="button default">view code on GitHub</a>															
+														<p>
+															<h5>Goal:</h5>
+															Explore the Squirrel Census data and describe the major squirrel behaviors. Would squirrel behaviors change across different parts of the park?
+														</p>
+														<p>
+															<h5>Data Description:</h5>
+															I obtained the 3023-row Squirrel Census data through the NYC Open Data api. 
+															Each row details a squirrel sighting with coordinates, a hectare grid location, physical description, standardized behaviors, and subjective behavioral observations.
+														</p>
+														<p>
+															<h5>Techniques:</h5>
+															I explored the data in a Jupyter notebook. A quick plot of coordinates shows the distribution of squirrels in the park. 
+															The large, central blank area indicates the water reservoir. 
+														</p>												 
+														<p>
+															<span><img src="images/squirrel_census_scatter_plot.png" alt="Squirrel locations" width="100%"/></span>
+														</p>
+														<p>
+															The census records major behaviors for each squirrel. I tallied the squirrel behaviors and grouped them into 3 behavioral categories. 
+														</p>
+														<p>
+															<span><img src="images/squirrel_census_behavior_count.png" alt="Squirrel locations" width="100%"/></span>
+														</p>
+														<p>
+														 	To get a picture of behavioral patterns throughout the park, I parsed the hectare id for each row, transformed the shape of the data, and aggregated behaviors for the individual hectares. 
+															I then plotted the aggreations as heat maps.
+														</p>
+														<p>
+															<span><img src="images/squirrel_census_heat_maps.png" alt="Squirrel behavior locations" width="100%"/></span>
+														</p>
+														<p>
+															I also divided the park into 8 cross sections for further aggregation (indiciated in orange in the "Squirrels per Hectare" heat map above).
+															Each of these lateral cross sections holds 45 or 54 hectares.												
+														</p>
+														<p>
+															<h5>Key Findings:</h5>
+														</p>
+														<p>
+															Squirrel behaviors change as the park topography and use areas change.
+															As seen in the heat maps above, feeding behavior is widespread while communication behavior is more sporadic and observed more in the center of the park (cross sections 4-6).
+														</p>
+														<p>
+															The individual squirrel behaviors can be aggregated per park cross section, plotted from south to north, and checked for correlation.
+															In general, foraging and eating behaviors are correlated, and they are negatively correlated with communication behaviors. 
+															This is most evident in the center of the park (cross sections 4-6) where feeding behavior decreases markedly.
+														</p>
+														<p>
+															Further research would look at the influence of changes in human presence in the center of the park on squirrel behavior.
+														</p>														
+														<p>
+															<span><img src="images/squirrel_census_least_correlated.png" alt="least correlated squirrel behavior" width="100%"/></span>
+														</p>
+														<p>
+
+														</p>
+														<p>
+															<span><img src="images/squirrel_census_most_correlated.png" alt="most correlated squirrel behavior" width="100%"/></span>
+														</p>
+																				
+														<a href="https://github.com/jaydee2020/Squirrel_Census_EDA/blob/main/Squirrel_Census_EDA.ipynb" target="_blank" rel="noopener noreferrer" class="button_git small">view code on GitHub</a>	
+														<a href="javascript:void(0);" onclick="toggleDetails('squirrel-census-details', document.getElementById('squirrel-census-button'), 'squirrel-census-project-wrapper');" class="button small">hide project details</a>			
 													</div>
 												</article>
 											</section>
@@ -386,9 +452,8 @@
 										<li class="icon brands fa-github"><a href="https://github.com/jaydee2020"><strong>Github</strong></a></li><br>
 										<li class="icon brands fa-linkedin"><a href="https://www.linkedin.com/in/jim-dingilian/"><strong>Linkedin</strong></a></li>
 									</ul>
+								</div>
 							</section>
-					</div>
-
 						<!-- Footer -->
 							<section id="footer">
 								<div class="container">
@@ -397,7 +462,7 @@
 									</ul>
 								</div>
 							</section>
-
+					</div>
 			</div>
 
 		<!-- Scripts -->
