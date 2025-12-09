@@ -11,6 +11,15 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-F1FZ98CKSW"></script>
+	<script>
+  		window.dataLayer = window.dataLayer || [];
+  		function gtag(){dataLayer.push(arguments);}
+  		gtag('js', new Date());
+
+ 		 gtag('config', 'G-F1FZ98CKSW');
+	</script>
 	<body class="is-preload">
 
 		<!-- Header -->
@@ -77,22 +86,23 @@
 															<br> <lowlight>Data&nbsp;Engineering</lowlight> <lowlight>Data&nbsp;Modeling</lowlight>
 														</p>
 														<p>
-															I transformed and loaded scientific plant information to enrich an inventory database.
+															I transformed and loaded taxomomic plant information to enrich an inventory database.
 														</p>
 														<a href="javascript:void(0);" onclick="toggleDetails('database-details', this, 'database-project-wrapper');" id="database-button" class="button default">view project details</a>
 													</div>
 													<div id="database-details" style="display: none; padding-top: 1em;">
 														<p>
 															<h5>My Role:</h5>
-															Volunteer Data Specialist for the Wave Hill Horticulture Department
+															Volunteer Data Specialist for the horticulture department at Wave Hill
 														</p>
 														<p>
 															<h5>Context:</h5>
-															Wave Hill is a non-profit public garden with a Horticultural Inventory database for internal use. Taxonomic information for each database record, such as the native range of a plant, was entered individually based on manual internet lookups.
+															Wave Hill is a non-profit public garden with a horticultural inventory database for internal use. 
+															Taxonomic information for each database record, such as the native range of a plant, was entered individually based on manual internet lookups.
 														</p>
 														<p>
 															<h5>Goal:</h5>
-															I was asked to eliminate the tedious internet lookups by integrating scientific plant information directly in the existing Horticultural Inventory database.
+															Eliminate the tedious internet lookups by integrating taxonomic plant information directly in the existing horticultural inventory database.
 														</p>
 														<p>
 															<h5>Data Description:</h5>
@@ -107,7 +117,7 @@
 																	</thead>
 																	<tbody>
 																		<tr>
-																			<td>Plant records extracted from<br>the Horticultural Inventory database (DB)</td>
+																			<td>Plant records extracted from<br>the horticultural inventory database (DB)</td>
 																			<td>CSV file</td>
 																			<td>~1,300</td>
 																		</tr>
@@ -170,7 +180,7 @@
 															</div>												
 														<p>
 															<h5>What I Built:</h5>I used Python code to parse scientific plant names into a standard format and join the source datasets. 
-															The joined data was loaded into the Horticultural Inventory database as a new table.
+															The joined data was loaded into the horticultural inventory database as a new table.
 														</p>
 														<p>
 															<ol>
@@ -187,7 +197,7 @@
 														<p>
 															<h5>Deliverables:</h5>
 															<ul>
-																<li>A CSV file of combined USDA and WCVP taxonomic information corresponding to the 1310 unique plant names in the Horticultural Inventory database. This CSV was loaded as a new table in the database. The scientific plant name is the foreign key that allows the taxonomic information to be joined with the original inventory table.</li>
+																<li>A CSV file of combined USDA and WCVP taxonomic information corresponding to the 1300+ unique plant names in the horticultural inventory database. This CSV was loaded as a new table in the database. The scientific plant name is the foreign key that allows the taxonomic information to be joined with the original inventory table.</li>
 																<br>
 																<li>A Python notebook that connects to the database through an API so users can easily add new rows of taxonomic information.</li>
 															</ul>
@@ -195,8 +205,8 @@
 														<p>
 															<h5>Impact:</h5>
 															<ul>
-																<li>Taxonomic information was matched for 96% of the plant records in the Horticultural Inventory. 
-																	This saved 7 hours of manual lookups of the same information, assuming 20 seconds per lookup.</li>
+																<li>Taxonomic information was matched for 96% of the plant records in the horticultural inventory. 
+																	This saved at least 7 hours of manual lookups of the same information, assuming 20 seconds per lookup.</li>
 																<br>
 																<li>Data validation - any unmatched records indiciate potential spelling errors or unaccepted scientific names in the original inventory table.</li>
 																<br>
@@ -234,7 +244,7 @@
 														</p>
 														<p>
 															<h5>Goal:</h5>											
-															I was asked to produce a single, continuous price function that performed better at the extreme ends of the product range. 
+															Produce a single, continuous price function that performs better at the extreme ends of the product range. 
 														</p>
 														<p>
 															<h5>Key Challenge:</h5>
@@ -293,7 +303,7 @@
 											</section>
 										</div>
 
-										<div id="tree-location-project-wrapper"> 
+										<div id="tree-coordinate-project-wrapper"> 
 											<section id="TreeLocation">
 												<article>
 													<a class="image"><img src="images/tree_coord_validate.png" alt="" /></a>
@@ -302,8 +312,99 @@
 														<h4>Tree Coordinate Validation</h4>
 														<p><lowlight>Python</lowlight> <lowlight>Pandas</lowlight> <lowlight>QGIS</lowlight> <lowlight>Data&nbsp;Transformation</lowlight></p>
 														<p>I reconciled two sets of geographic data to pinpoint tree locations in a public garden.</p>
-														<p>(Details coming soon.)</p>
-													</div>												
+														<a href="javascript:void(0);" onclick="toggleDetails('tree-coordinate-details', this, 'tree-coordinate-project-wrapper');" id="tree-coordinate-button" class="button default">view project details</a>
+													</div>
+													<div id="tree-coordinate-details" style="display: none; padding-top: 1em;">
+														<p>
+															<h5>My Role:</h5>
+															Volunteer Data Specialist for the horticulture department at Wave Hill
+														</p>
+														<p>
+															<h5>Context:</h5>
+															Wave Hill is a non-profit public garden in the process of mapping its plant collection for a public-facing database. 
+															Some database records already had geographic coordinates, but many did not.
+															A professional, more precise GPS survey of trees in the garden was commissioned.
+														</p>
+														<p>
+															<h5>Goal:</h5>
+															Update the database records with the geo coordinates from the GPS survey.
+														</p>
+														<p>
+															<h5>Data Description:</h5>
+															<div class="table-wrapper">
+																<table>
+																	<thead>
+																		<tr>
+																			<th>Source Dataset</th>
+																			<th>Data Format</th>
+																			<th>Size (rows)</th>
+																		</tr>
+																	</thead>
+																	<tbody>
+																		<tr>
+																			<td>Plant records extracted from<br>the public-facing horticultural database</td>
+																			<td>CSV file</td>
+																			<td>~3,100</td>
+																		</tr>
+																		<tr>
+																			<td>Longitude, Latitude, and scientific name<br>from the GPS tree survey</td>
+																			<td>CSV file</td>
+																			<td>~600</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</div>
+														</p>
+														<p>
+															<h5>Key Challenge:</h5>
+															Matching the two source datasets could not be fully automated because neither was comprehensive and there were discrepancies in the scientific classification of trees between each dataset.
+															Therefore, I needed to create an efficient presentation of potential matches to be reviewed by the horticulturalist. 
+														</p>											
+														<p>
+															<h5>What I Built:</h5>
+															I processed the datasets and presented them visually as a interactive QGIS map. 
+															The map functioned as a data selection tool because it simultaneously showed geo coordinates from the survey and database, 
+															along with likely matches from the database that had no coordinates.
+														</p>
+														<p>
+															<ol>
+																<li>I cleaned and standardized the two datasets using Pandas dataframes and QGIS. 
+																	This included parsing scientific tree names, assigning garden locations to geo coordinates, 
+																	and finding the centroids of garden locations.</li>
+														   		<br>
+																<li>I created Mutually Exclusive, Collectively Exhaustive (MECE) subsets of database records, 
+																	which were divided by GPS coordinates, garden location, and scientific name.</li>
+														   		<br>
+																<li>I mapped the survey geo coordinates and the databse MECE subsets in QGIS as layers. 
+																	Map points could be manually connected in the underlying data to indicate a match.</li>
+															</ol>
+														</p>
+														<p>
+															<span><img src="images/tree-coordinate-map.png" alt="tree coordinate map detail" width="100%"/></span>
+														</p>
+														<p>
+															<h5>Deliverables:</h5>
+															<ul>
+																<li>An interactive map of processed data.</li>
+																<br>
+																<li>After connections are made in the underlying datasets, 
+																	updated coordinates are extracted and merged into the public-facing database.</li>
+															</ul>
+														</p>
+														<p>
+															<h5>Impact:</h5>
+															<ul>
+																<li>The interactive, visual presentation made it easy for the horticulturalist to confirm matches. 
+																	They could could visually scan the map, apply their knowledge of the plant collection, and eliminate or confirm points using the logic of the MECE subsets.
+																</li>
+																<br>
+																<li>Of the 595 trees in the survey, the horticulturalist was presented with 128 highly likely database matches for review, 
+																	composed of 84 records with preexisting coordinates and 44 without. 
+																</li>																
+															</ul>
+														</p>															
+														<a href="javascript:void(0);" onclick="toggleDetails('tree-coordinate-details', document.getElementById('tree-coordinate-button'), 'tree-coordinate-project-wrapper');" class="button small">hide project details</a>			
+													</div>
 												</article>
 											</section>
 										</div>																				
@@ -406,7 +507,10 @@
 														<h5>Independent Project:</h5> 
 														<h4>New York Courts EDA</h4>
 														<p><lowlight>Python</lowlight> <lowlight>Pandas</lowlight> <lowlight>Numpy</lowlight> <lowlight>SQL</lowlight> <br> <lowlight>Matplotlib</lowlight> <lowlight>Data&nbsp;Visualization</lowlight></p>
-														<p>I explored court trends in the five NYC boroughs during the pandemic years.<br>
+														<p>
+															I explored court trends in the five NYC boroughs during the pandemic years.															
+														</p>
+														<p>
 															(Details coming soon.)
 														</p>
 														<a href="https://github.com/jaydee2020/OCA-STAT_EDA/blob/main/OCA_STAT_SQL_.ipynb" target="_blank" rel="noopener noreferrer" class="button default">view code on GitHub</a>
@@ -459,7 +563,7 @@
 							<section id="footer">
 								<div class="container">
 									<ul class="copyright">
-										<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+										<li>&copy; Untitled. All rights reserved.</li><li>Design: HTML5 UP</li>
 									</ul>
 								</div>
 							</section>
