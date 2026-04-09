@@ -64,7 +64,7 @@
 										<p></p>
 									</header>
 									<p>
-										I'm a versatile data enthusiast with 20+ years of experience building information solutions, resolving logistical issues, and providing outstanding client service in small-business settings. 
+										I'm a versatile data enthusiast with experience building information solutions, resolving logistical issues, and providing outstanding client service in small-business settings. 
 										I enjoy communicating ideas across a range of technical, creative, and public-facing roles.
 									</p>
 								</div>
@@ -75,6 +75,84 @@
 								<div class="container">
 									<h3>Stakeholder Projects</h3>
 									<div class="features">
+										<div id="bloomdash-project-wrapper"> 
+											<section id="BloomDashboard">
+												<article>
+													<a class="image"><img src="images/bloom_dash.png" alt="" /></a>
+													<div class="inner">
+														<h5>Stakeholder Project:</h5>
+														<h4>Horticultural Dashboard</h4>
+														<p><lowlight>Dash</lowlight> <lowlight>Python</lowlight> <lowlight>Pandas</lowlight> 
+															<lowlight>GeoJSON</lowlight><lowlight>Docker</lowlight>
+															<lowlight>Google&nbsp;Cloud</lowlight> <lowlight>Data&nbsp;Visualization</lowlight>
+														</p>
+														<p>
+															I built a web app to help a public garden get insights about their herbaceous plant collection.
+														</p>
+														<p>
+														<a href="https://enhanced-bloom-list-port-525126786178.us-east1.run.app/" target="_blank" rel="noopener noreferrer" class="button default">view the Dashboard</a>
+														</p>
+														
+														<a href="javascript:void(0);" onclick="toggleDetails('bloomdash-details', this, 'bloomdash-project-wrapper');" id="bloomdash-button" class="button default">view project details</a>
+														
+													</div>
+													<div id="bloomdash-details" style="display: none; padding-top: 1em;">
+														<p>
+															<h5>My Role:</h5>
+															Volunteer Data Specialist for the horticulture department at Wave Hill
+														</p>
+														<p>
+															<h5>Context:</h5>
+															Wave Hill is a non-profit public garden with a collection of over 2000 herbaceous plants.
+														</p>
+														<p>
+															<h5>Goal:</h5>
+															Provide collection insights about plants in bloom grouped by month and location, along with other aggregate data.									</p>
+														</p>
+														<p>
+															<h5>Data Description:</h5>
+															After cleaning and enriching Wave Hill's herbaceous plant database (see Horticultural Database Integration project below), I joined the >1600 unique plant taxa with native-range data.
+															<br><br>
+															The largest native-range dataset was the World Catalog of Vascular Plants (WCVP) distribution file, a CSV of xxxxx rows.
+															<br><br>
+															A GeoJSON file of garden location polygons was used for the map visualization.
+														</p>
+														<p>
+															<h5>What I Built:</h5>
+															
+															<span><img src="images/dash_herbaceous.png" alt="Dash dashboard" width="100%"/></span>
+														</p>
+														</p>
+															I created a Bloom List dashboard using Python and Plotly Dash. I containerized the dashboard app using Docker and deployed it via Google Cloud Run.
+															<br><br> 
+															The web app is optimized for desktop, but it is also mobile reponsive.
+														</p>
+														<p>
+															<h5>Impact:</h5>
+															<ul>
+																<li>Previous bloom lists were static spreadsheets with limited plant information. The dashboard provides filtering and aggregate visualizations.</li>
+																<br>
+																<li>The garden staff can quickly view plant data without needing access to the database.</li>
+															</ul>
+														</p>
+														<a href="https://enhanced-bloom-list-port-525126786178.us-east1.run.app/n" target="_blank" rel="noopener noreferrer" class="button_git small">view the Dashboard</a>	
+														<a href="javascript:void(0);" onclick="toggleDetails('bloomdash-details', document.getElementById('bloomdash-button'), 'bloomdash-project-wrapper');" class="button small">hide project details</a>			
+													</div>
+												</article>
+											</section>
+										</div>
+
+
+
+
+
+
+
+
+
+
+
+
 										<div id="database-project-wrapper"> 
 											<section id="DatabaseIntegration">
 												<article>
